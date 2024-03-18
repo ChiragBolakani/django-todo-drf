@@ -25,7 +25,7 @@ async function buildList(){
     const wrapper = document.getElementById('list-wrapper');
     // wrapper.innerHTML = '';
 
-    var url = "http://localhost:8000/api/task-list/"
+    var url = "http://13.48.49.189:8000/api/task-list/"
 
     await fetch(url)
 
@@ -103,12 +103,12 @@ form_wrapper.addEventListener('submit', async (e)=>{
     e.preventDefault();
     console.log('form submitted');
 
-    var url = "http://localhost:8000/api/task-create/"
+    var url = "http://13.48.49.189:8000/api/task-create/"
     var title = document.getElementById('title').value;
     const form = document.getElementById('form');
 
     if(activeItem!=null){
-       var url = `http://localhost:8000/api/task-update/${activeItem.id}/`
+       var url = `http://13.48.49.189:8000/api/task-update/${activeItem.id}/`
        activeItem = null;
     }
 
@@ -146,7 +146,7 @@ async function deleteitem(item){
     console.log("delete clicked");
     console.log(item);
 
-    var url = `http://localhost:8000/api/task-delete/${item.id}/`
+    var url = `http://13.48.49.189:8000/api/task-delete/${item.id}/`
     var options = {
         method : 'DELETE',
         headers : {
@@ -170,7 +170,7 @@ async function strikeUnstrike(item){
     console.log("striked/unstriked");
     console.log(item);
 
-    var url = `http://localhost:8000/api/task-update/${item.id}/`
+    var url = `http://13.48.49.189:8000/api/task-update/${item.id}/`
     item.completed = !item.completed;
 
     const data = {
