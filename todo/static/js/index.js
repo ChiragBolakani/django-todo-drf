@@ -101,7 +101,7 @@ const form_wrapper = document.getElementById('form-wrapper');
 
 form_wrapper.addEventListener('submit', async (e)=>{
     e.preventDefault();
-    console.log('form submitted');
+    // console.log('form submitted');
 
     var url = "http://13.48.49.189:8000/api/task-create/"
     var title = document.getElementById('title').value;
@@ -137,14 +137,14 @@ form_wrapper.addEventListener('submit', async (e)=>{
 })
 
 function editItem(item){
-    console.log(item);
+    // console.log(item);
     activeItem = item;
     document.getElementById('title').value = activeItem.title;
 }
 
 async function deleteitem(item){
-    console.log("delete clicked");
-    console.log(item);
+    // console.log("delete clicked");
+    // console.log(item);
 
     var url = `http://13.48.49.189:8000/api/task-delete/${item.id}/`
     var options = {
@@ -167,8 +167,8 @@ async function deleteitem(item){
 }
 
 async function strikeUnstrike(item){
-    console.log("striked/unstriked");
-    console.log(item);
+    // console.log("striked/unstriked");
+    // console.log(item);
 
     var url = `http://13.48.49.189:8000/api/task-update/${item.id}/`
     item.completed = !item.completed;
